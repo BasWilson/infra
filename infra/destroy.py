@@ -1,27 +1,24 @@
-import yaml
 from infra.helpers.config import LoadInfraFile
 from dotenv import load_dotenv
 from infra.helpers.constants import InfoMessages
 
-from infra.helpers.logs import  PrintInfo, SetupLogging
+from infra.helpers.logs import PrintInfo, SetupLogging
 from infra.helpers.paths import SetupPaths
 from infra.helpers.state import GetState, StoreState
 
 load_dotenv()
-SetupPaths() # Also done in infra/init.py, but to be sure we do it here as well
+SetupPaths()  # Also done in infra/init.py, but to be sure we do it here as well
 SetupLogging()
 
 infra = LoadInfraFile()
 resources = infra["resources"]
 providers = infra["providers"]
 
-createdResources = []
-
 for resource in resources:
     providerName = resource["provider"]
 
     # get the saved state of the resource
-    state =  GetState()
+    state = GetState()
     resourceState = state.get(resource["id"], None)
 
     # check if the resource is already in the desired state

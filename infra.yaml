@@ -1,13 +1,20 @@
 resources:
+  - id: random-pokemon-name
+    provider: pokemon
+    minId: 1
+    maxId: 151
+
   - id: droplet-by-infra
     provider: digitalocean
     type: droplet
     size: s-1vcpu-1gb
-    count: 1
     image: ubuntu-20-04-x64
     backups: false
     ipv6: true
     monitoring: true
     region: ams3
+    tags:
+      - ${random-pokemon-name.pokemonName}
+      - ${ENVIRONMENT}
     user_data: |
-      echo "Hello World" > /root/hello.txt
+      echo "${random-pokemon-name.pokemonName}" > /root/pokemon.txt

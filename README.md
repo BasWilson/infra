@@ -25,6 +25,30 @@ resources:
       echo "Hello World" > /root/hello.txt
 ```
 
+### Variables
+You can use two types of variables (**provider generated** or **environment variables**).
+Order of importance when Infra selects variables: provider generated -> environment variable
+
+Here is an example where we will use the pokemon provider to randomly generate a pokemon name and then use the provider generated variable as a tag in the next resource:
+```yaml
+resources:
+  - id: random-pokemon-name
+    provider: pokemon
+
+  - id: droplet-by-infra
+    provider: digitalocean
+    ...
+    tags:
+      - ${random-pokemon-name.pokemonName}
+      - ${ENVIRONMENT}
+    user_data: |
+      echo "${random-pokemon-name.pokemonName}" > /root/pokemon.txt
+```
+
+You can use variables in anywhere in the infra.yaml file as shown above.
+
+### Deploying
+
 Run the following command to deploy the infrastructure:
 ```bash
 infra apply
