@@ -2,8 +2,8 @@ ErrorMessages = {
     "no_infra_file": "Failed to load infra.yaml, make sure it exists in the current directory",
     "no_provider": "No provider found for resource: {}",
     "duplicate_resource_id": "Duplicate resource id found: {}",
-    "no_config": "No config.yaml found for resource: {}, make sure it exists in iaas/providers/{}/config.yaml",
-    "no_provider_class": "No provider class found for resource: {}, make sure it exists in iaas/providers/{}",
+    "no_config": "No config.yaml found for resource: {}, make sure it exists in infra/providers/{}/config.yaml",
+    "no_provider_class": "No provider class found for resource: {}, make sure it exists in infra/providers/{}",
     "provider_config_validation_failed": "Failed to validate config.yaml for provider: {}"
 }
 

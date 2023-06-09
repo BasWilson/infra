@@ -8,7 +8,7 @@ from infra.helpers.paths import SetupPaths
 from infra.helpers.state import GetState, StoreState
 
 load_dotenv()
-SetupPaths() # Also done in iaas/init.py, but to be sure we do it here as well
+SetupPaths() # Also done in infra/init.py, but to be sure we do it here as well
 SetupLogging()
 
 infra = LoadInfraFile()

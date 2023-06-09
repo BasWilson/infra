@@ -6,7 +6,7 @@ resources:
     count: 1
     image: ubuntu-20-04-x64
     backups: false
-    ipv6: false
+    ipv6: true
     monitoring: true
     region: ams3
     user_data: |

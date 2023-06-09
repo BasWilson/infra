@@ -35,7 +35,7 @@ def LoadInfraFile():
         # read the config
         config = None
         try:
-            with open("iaas/providers/{}/config.yaml".format(provider), 'r') as stream:
+            with open("infra/providers/{}/config.yaml".format(provider), 'r') as stream:
                 config = yaml.safe_load(stream)
         except:
             PrintError(ErrorMessages["no_config"].format(provider, provider))
@@ -50,7 +50,7 @@ def LoadInfraFile():
         # read the provider methods
         try:
             loc = {}
-            exec("import iaas.providers.{}.{} as provider_{}".format(provider, config["entrypoint"], provider), globals(), loc)
+            exec("import infra.providers.{}.{} as provider_{}".format(provider, config["entrypoint"], provider), globals(), loc)
             loadedProviders[provider] = loc["provider_{}".format(provider)]
             PrintInfo(InfoMessages["imported_provider"].format(loc))
         except:
