@@ -1,0 +1,13 @@
+resources:
+  - id: droplet-by-infra
+    provider: digitalocean
+    type: droplet
+    size: s-1vcpu-1gb
+    count: 1
+    image: ubuntu-20-04-x64
+    backups: false
+    ipv6: false
+    monitoring: true
+    region: ams3
+    user_data: |
+      echo "Hello World" > /root/hello.txt
