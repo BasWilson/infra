@@ -30,6 +30,9 @@ Run the following command to deploy the infrastructure:
 infra apply
 ```
 
+## To do
+- [ ] Add more providers
+- [ ] Use sqlite instead of yaml for state file
 
 ## Creating a provider
 For this example, we will create a basic provider for DigitalOcean. 
