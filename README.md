@@ -27,7 +27,7 @@ resources:
 
 Run the following command to deploy the infrastructure:
 ```bash
-infra deploy
+infra apply
 ```
 
 
