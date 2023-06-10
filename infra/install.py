@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
 SetupPaths()
 
+url = os.getenv("BACKEND_URL") if os.getenv("BACKEND_URL") != None else "https://infra-backend-abuah.ondigitalocean.app"
+
 # Installs a provider based on command line arguments
 
 args = sys.argv
@@ -25,7 +27,7 @@ if os.path.exists("providers/" + provider):
     exit(1)
 
 # make request to backend
-result = requests.get("{}/providers/{}".format(os.getenv("BACKEND_URL"), provider))
+result = requests.get("{}/providers/{}".format(url, provider))
 if result.status_code != 200:
     print("Provider not found on backend, skipping installation")
     exit(1)
