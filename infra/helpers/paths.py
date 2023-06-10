@@ -10,3 +10,6 @@ def SetupPaths():
 
     if not os.path.exists(".infra/state"):
         os.makedirs(".infra/state")
+
+    if not os.path.exists(".infra/downloads"):
+        os.makedirs(".infra/downloads")

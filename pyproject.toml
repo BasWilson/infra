@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "infra"
 version = "0.1.0"
-description = ""
+description = "Infrastructure as code"
 authors = ["Bas Wilson <friedcatps@gmail.com>"]
 readme = "README.md"
 

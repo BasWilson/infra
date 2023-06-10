@@ -57,6 +57,21 @@ infra apply
 ## To do
 - [ ] Add more providers
 - [ ] Use sqlite instead of yaml for state file
+- [x] Add a way to use variables in the infra.yaml file
+- [x] Install providers from the backend
+
+
+## Installing providers
+You can install providers from the backend. To get a full list of available providers, run:
+```bash
+infra providers
+```
+
+To install a provider, run:
+```bash
+infra install <provider> <version>
+```
+
 
 ## Creating a provider
 For this example, we will create a basic provider for DigitalOcean. 
