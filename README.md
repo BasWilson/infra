@@ -81,17 +81,12 @@ For this example, we will create a basic provider for DigitalOcean.
 
 
 ### Creating the provider' files
-Create a folder with the name of your provider. 
+Providers are basically python projects, to make it easy I recommend you to use poetry. So here goes:
 ```bash
-mkdir -p providers/digitalocean
+poetry new your_provider_name
 ```
 
-Create a file called `main.py` in the folder you just created. This file will contain the code for your provider.
-```bash
-touch providers/digitalocean/main.py
-```
-
-Create a file called `config.yaml` in the folder you just created. This file will contain the configuration for your provider.
+Create a file called `infra-config.yaml` in the folder you just created. This file will contain the configuration for your provider.
 ```bash
 touch providers/digitalocean/config.yaml
 ```
@@ -105,7 +100,7 @@ env_vars:
   - "DIGITALOCEAN_TOKEN"
 ```
 What this means:
-- `name`: The name of your provider.ß
+- `name`: The name of your provider.
 - `env_vars`: The environment variables that are required for your provider to work.
 
 All of these except for `env_vars` are required.
@@ -130,7 +125,7 @@ To build the provider, run:
 infra provider build
 ```
 
-### Publishing the provider
+### Publishing the provider to Infra
 First sign in with your Infra account:
 ```bash
 infra auth login <username> <password> 
