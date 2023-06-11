@@ -8,6 +8,26 @@ I have made providers for platforms that I've used. You can make your own provid
 ## Providers supported by Infra
 - [DigitalOcean](https://www.digitalocean.com/)
 
+## Installation
+```bash
+git clone https://github.com/baswilson/infra.git && cd infra
+```
+```bash
+poetry install
+```
+
+```bash
+poetry shell
+```
+
+```bash
+poetry build
+```
+
+```bash
+pip3 install dist/infra-0.1.0-py3-none-any.whl
+```
+
 ## Usage
 Create an infra.yaml file. This is an example to deploy a droplet on DigitalOcean:
 ```yaml
@@ -21,8 +41,6 @@ resources:
     count: 1
     image: ubuntu-18-04-x64
     region: ams3
-    user_data: |
-      echo "Hello World" > /root/hello.txt
 ```
 
 ### Variables
@@ -64,12 +82,12 @@ infra apply
 ## Installing providers
 You can install providers from the backend. To get a full list of available providers, run:
 ```bash
-infra providers
+infra provider list
 ```
 
 To install a provider, run:
 ```bash
-infra install <provider> <version>
+infra provider install <provider> <wheel?>
 ```
 
 

@@ -1,9 +1,12 @@
 [tool.poetry]
-name = "infra"
+name = "infra-cli"
 version = "0.1.0"
 description = "Infrastructure as code"
 authors = ["Bas Wilson <friedcatps@gmail.com>"]
 readme = "README.md"
+
+[tool.poetry.scripts]
+infra = "infra_cli.main:command"
 
 [tool.poetry.dependencies]
 python = "^3.11"

@@ -4,7 +4,7 @@ resources:
     minId: 1
     maxId: 151
 
-  - id: droplet-by-infra
+  - id: droplet
     provider: digitalocean
     type: droplet
     size: s-1vcpu-1gb
