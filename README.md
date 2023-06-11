@@ -88,7 +88,7 @@ poetry new your_provider_name
 
 Create a file called `infra-config.yaml` in the folder you just created. This file will contain the configuration for your provider.
 ```bash
-touch providers/digitalocean/config.yaml
+touch your_provider_name/infra-config.yaml
 ```
 
 ### config.yaml
