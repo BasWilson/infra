@@ -10,22 +10,7 @@ I have made providers for platforms that I've used. You can make your own provid
 
 ## Installation
 ```bash
-git clone https://github.com/baswilson/infra.git && cd infra
-```
-```bash
-poetry install
-```
-
-```bash
-poetry shell
-```
-
-```bash
-poetry build
-```
-
-```bash
-pip3 install dist/infra-0.1.0-py3-none-any.whl
+pip3 install git+https://github.com/baswilson/infra.git
 ```
 
 ## Usage
@@ -116,15 +101,11 @@ touch providers/digitalocean/config.yaml
 The config.yaml file contains the configuration for your provider. This is an example of a config.yaml file for DigitalOcean:
 ```yaml
 name: "digitalocean"
-version: 1.0.0
-entrypoint: "main"
 env_vars:
   - "DIGITALOCEAN_TOKEN"
 ```
 What this means:
-- `name`: The name of your provider.
-- `version`: The version of your provider.
-- `entrypoint`: The name of the file that contains the code for your provider (omit the file extension).
+- `name`: The name of your provider.ß
 - `env_vars`: The environment variables that are required for your provider to work.
 
 All of these except for `env_vars` are required.
@@ -142,3 +123,22 @@ def Destroy(resources):
     print("Destroying digitalocean resources")
     return None;
 ```
+
+### Building the provider
+To build the provider, run:
+```bash
+infra provider build
+```
+
+### Publishing the provider
+First sign in with your Infra account:
+```bash
+infra auth login <username> <password> 
+```
+
+To publish the provider, run:
+```bash
+infra provider publish
+```
+
+It is currently not possible to create a provider via the backend (I have not made a way to create your user account yet). You can create a provider by creating a pull request to this repository.
